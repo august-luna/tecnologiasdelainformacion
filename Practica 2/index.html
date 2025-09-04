@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgba(182, 209, 170, 0.911);
+            font-family: Arial, sans-serif;
+        }
+        h1{
+            color: blue;
+            background-color: wheat;
+            border-radius: 30px;
+            margin: 20px;
+            padding: 25px;
+            width: 300px;
+            text-align: center;
+            font-size: 2cm;
+        }
+        a{
+            color: rgb(0, 55, 255);
+            font-size: 20px;
+            background-color: mediumseagreen;
+            text-decoration: honeydew;
+            margin: 10px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+        a:hover{
+            color: red;
+            background-color: yellow;
+            font-size: 25px;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>titulo 1</h1>
+    <h2>Practica 2</h2>
+    <h3>se va 3</h3>
+    <h4>como sea el 4</h4>
+    <h5>y bueno el 5</h5>
+    <h6>y se acaba con el 6</h6>
+    <p>Esto es un parrafo</p>
+    <a href="https://apple.com" target="_self">Visitar Sitio de Apple</a>
+    <br>
+    <a href="https://google.com" target="_parent">Visitar Sitio de Google</a>
+    <hr>
+    <a href="https://youtube.com" target="_blank">Abrir YouTube</a>
+    <br>
+    <a href="https://www.lasallebajio.edu.mx/" target="_top">Sitio La Salle Bajio</a>
+    <hr>
+    <a href="https://open.spotify.com/intl-es?flow_ctx=172a52e3-b456-41e2-bf7c-ad24ef4a584e%3A1755807226" target="_blank">Escuchar musica en Spotify</a>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, beatae. Possimus fugiat, ea totam sapiente nam labore obcaecati temporibus beatae eligendi error deserunt sunt eius sequi voluptates quidem modi voluptatum?</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Five-pointed_star.svg" alt="Estrella" width="50" height="50">
+<div id="imagenes"></div>
+<script>
+    for(let i=0; i<20; i++){
+        document.getElementById('imagenes').innerHTML += '<img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Five-pointed_star.svg" width="50" height="50">';
+    }
+</script>
+
+    
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es"> <!--El internet se basa en html, head es el cerebro-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Cambia la fuente a Arial */
+            margin: 20px; /* Agrega un margen alrededor del contenido */
+            background-color: #e3e7de; /* Cambia el color de fondo */
+        }
+        h1 {
+            color: #333; /* Cambia el color del encabezado */
+            text-align: center; /* Centra el encabezado */
+            margin-bottom: 20px; /* Agrega espacio debajo del encabezado */
+            font-size: 2.5em; /* Aumenta el tamaño del texto del encabezado */
+            background-color: rgb(216, 249, 249);
+            padding: 10px; /* Agrega espacio alrededor del texto */
+            border-radius: 8px; /* Agrega bordes redondeados al encabezado */
+            border-bottom: 8px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agrega una sombra al encabezado */
+        }
+        p {
+            line-height: 1.6; /* Mejora la legibilidad del texto */
+        }
+        img {
+            border-radius: 8px; /* Agrega bordes redondeados a la imagen */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agrega una sombra a la imagen */
+            margin: 10px 0; /* Agrega espacio arriba y abajo de la imagen */
+        }
+        li {
+            margin-bottom: 10px; /* Agrega espacio entre los elementos de la lista */
+        }
+        h2 {
+            color: #3e5557; /* Cambia el color del subencabezado */
+            margin-top: 80px; /* Agrega espacio encima del subencabezado */
+            font-size: 1.8em; /* Aumenta el tamaño del texto del subencabezado */
+            border-bottom: 2px solid #ccc; /* Agrega una línea debajo del subencabezado */
+            padding-bottom: 5px; /* Agrega espacio debajo del texto */
+        }
+    </style>
+</head>
+<body> <!--Adentro de body va todo el codigo-->
+    
+<h1>Augusto Luna</h1> <!--Encabezado-->
+<p>Estudiante de 18 años de Guanajuato Capital, estudiando en León, Guanajuato.</p><!--Parrafo-->
+<p>Buscando ser un proximo 'Hombre del Renacimiento'. Esto se refiere a alguien que tiene intereses diversos, y practica el seguir cultivando sus conocimientos en ellos. </p>
+
+
+
+<div id="imagenes"></div> <!--Div para insertar imagenes con javascript-->
+<script> /*Codigo JavaScript*/
+    for(let i=0; i<4; i++){ /*Ciclo para repetir la imagen 4 veces*/
+        document.getElementById('imagenes').innerHTML += '<img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Five-pointed_star.svg" width="50" height="50">';
+    } 
+    /*+= es para concatenar, no borrar lo que ya esta*/
+    /*getElementById es para llamar al id del div*/
+    /*innerHTML es para insertar codigo html dentro del div*/
+</script>
+
+
+
+<!--Ingresar Imagen: Guardar archivo dentro del folder de LA practica-->
+<img src="August.jpeg" alt="August" width="200px"> <!--Ingresar Imagen: src:EL archico, alt:distinguirlo-->
+
+<div style="position: relative; display: inline-block; width: 220px; height: 220px;">
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Five-pointed_star.svg" 
+         style="position: absolute; top: 100%; right: 175%; transform: translateY(0%);" width="40" height="40">
+</div>
+
+
+
+
+
+
+
+<!--Habilidades, contacto redes, estudios, -->
+
+<h2>Habilidades</h2>
+<p>Soy una persona que acepta muy facil el cambio, por consecuncia se adaptarme y afrontar las adversidades, buscando siempre estrategias para agilizar este proceso.</p>
+<p> Se todo sobre la planeación, creación, dirección, edición
+    y publicidad en redes sociales, ya sean posts o videos cortos.</p> 
+<p>Cuento con estudios avanzados del idioma inglés, asi como un avance en el aprendizaje del francés.</p>
+
+
+
+<h2>Contacto</h2>
+<ul>
+    <li>Instagram: @augustt.luna</li>
+    <li>Email: cesarlufo@gmail.com</li>
+</ul>
+
+<h2>Estudios</h2>
+<p>Primaria-Secundaria: Liceo Intercultural Mexicano (2012-2021)</p>
+<p>Preparatoria: Escuela de Nivel Medio de Guanajuato (2021-2024)</p>
+<p>Universidad: Ing. en Tecnologias y Soluciones del Negocio, La Salle Bajio (2025-Actualidad)</p>
+
+</body>
+</html>
+<!--Control S para guardar-->

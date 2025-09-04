@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Currículum Vitae - Moderno y Minimalista</title>
+    <!-- Tipografía moderna -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Iconos simples (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #de124c;
+            font-family: 'Montserrat', Arial, sans-serif;
+            color: #333;
+        }
+        .cv-container {
+            display: flex;
+            max-width: 1050px;
+            margin: 40px auto;
+            background: #fff;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+            border-radius: 18px;
+            overflow: hidden;
+        }
+        .cv-left {
+            background: #e9ecef;
+            width: 340px;
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .cv-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 28px;
+            box-shadow: 0 8px 32px rgba(34, 139, 34, 0.13);
+            border: 6px solid #2e7d32;
+            background: linear-gradient(135deg, #2e7d32 0%, #e9ecef 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .cv-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .cv-contact, .cv-skills, .cv-languages, .cv-certifications, .cv-social {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        .cv-contact h3, .cv-skills h3, .cv-languages h3, .cv-certifications h3, .cv-social h3 {
+            color: #2e7d32;
+            font-size: 1.12em;
+            margin-bottom: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        .cv-contact ul, .cv-social ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .cv-contact li, .cv-social li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            color: #444;
+            font-size: 1em;
+        }
+        .cv-contact i, .cv-social i {
+            color: #2e7d32;
+            margin-right: 10px;
+            font-size: 1.15em;
+        }
+        .cv-skills ul, .cv-languages ul, .cv-certifications ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .cv-skills li, .cv-languages li, .cv-certifications li {
+            margin-bottom: 15px;
+        }
+        .skill-bar {
+            background: #d0d7de;
+            border-radius: 8px;
+            height: 8px;
+            width: 100%;
+            margin-top: 4px;
+            overflow: hidden;
+        }
+        .skill-level {
+            display: block;
+            height: 100%;
+            border-radius: 8px;
+            background: linear-gradient(90deg, #2e7d32 70%, #4caf50 100%);
+        }
+        .cv-languages .lang-level {
+            font-size: 0.93em;
+            color: #666;
+            margin-left: 8px;
+        }
+        .cv-certifications .cert-date {
+            font-size: 0.92em;
+            color: #888;
+            margin-left: 6px;
+        }
+        .cv-social a {
+            color: #2e7d32;
+            text-decoration: none;
+            margin-right: 12px;
+            transition: color 0.2s;
+        }
+        .cv-social a:hover {
+            color: #388e3c;
+        }
+        .cv-right {
+            flex: 1;
+            padding: 48px 54px;
+            background: #fff;
+        }
+        .cv-profile {
+            margin-bottom: 36px;
+        }
+        .cv-profile h2 {
+            color: #2e7d32;
+            font-size: 2.2em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .cv-profile h4 {
+            color: #4caf50;
+            font-size: 1.15em;
+            font-weight: 500;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+        .cv-profile p {
+            color: #444;
+            font-size: 1.09em;
+            line-height: 1.6;
+        }
+        .cv-section {
+            margin-bottom: 36px;
+        }
+        .cv-section h3 {
+            color: #2e7d32;
+            font-size: 1.22em;
+            font-weight: 600;
+            margin-bottom: 16px;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 4px;
+            letter-spacing: 1px;
+        }
+        .cv-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .cv-section li {
+            margin-bottom: 20px;
+        }
+        .cv-section .job-title, .cv-section .degree, .cv-section .project-title {
+            color: #333;
+            font-weight: 600;
+            font-size: 1.07em;
+        }
+        .cv-section .job-company, .cv-section .job-date, .cv-section .degree-school, .cv-section .degree-date, .cv-section .project-desc {
+            color: #666;
+            font-size: 0.99em;
+        }
+        .cv-section .job-desc, .cv-section .project-desc {
+            margin-top: 2px;
+            color: #444;
+            font-size: 0.98em;
+        }
+        .cv-section .job-achievements {
+            margin-top: 6px;
+            margin-left: 18px;
+            color: #555;
+            font-size: 0.97em;
+        }
+        .cv-section .job-achievements li {
+            margin-bottom: 4px;
+        }
+        .cv-section .degree-extra {
+            color: #4caf50;
+            font-size: 0.97em;
+            margin-left: 8px;
+        }
+        .cv-section .project-tech {
+            color: #2e7d32;
+            font-size: 0.93em;
+            margin-left: 8px;
+        }
+        @media (max-width: 900px) {
+            .cv-container {
+                flex-direction: column;
+                max-width: 98vw;
+            }
+            .cv-left, .cv-right {
+                width: 100%;
+                padding: 28px 16px;
+            }
+            .cv-right {
+                padding-top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <p>imagen avif</p>
+    <img src="img/Capitan-America.avif" alt="avif">
+    <p>imagen jpeg</p>
+    <img src="img/Capitan-America.jpg" alt="jpg">
+    <p>imagen png</p>
+    <img src="img/Capitan-America png.png" alt="png">
+    <p>imagen webp </p>
+    <img src="img/Capitan-America 4.webp" alt="webp">
+    <div class="cv-container">
+        <div class="cv-left">
+            <div class="cv-photo">
+                <img src="August.jpeg" alt="Foto del candidato">
+            </div>
+            <div class="cv-contact">
+                <h3>Contacto</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> cesar@email.com</li>
+                    <li><i class="fas fa-phone"></i> +34 600 123 456</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Barcelona, España</li>
+                    <li><i class="fas fa-globe"></i> www.cesarmartinez.dev</li>
+                </ul>
+            </div>
+            <div class="cv-skills">
+                <h3>Habilidades</h3>
+                <ul>
+                    <li>
+                        HTML & CSS
+                        <div class="skill-bar"><span class="skill-level" style="width:92%"></span></div>
+                    </li>
+                    <li>
+                        JavaScript
+                        <div class="skill-bar"><span class="skill-level" style="width:85%"></span></div>
+                    </li>
+                    <li>
+                        Python
+                        <div class="skill-bar"><span class="skill-level" style="width:80%"></span></div>
+                    </li>
+                    <li>
+                        React
+                        <div class="skill-bar"><span class="skill-level" style="width:78%"></span></div>
+                    </li>
+                    <li>
+                        SQL & Bases de Datos
+                        <div class="skill-bar"><span class="skill-level" style="width:75%"></span></div>
+                    </li>
+                    <li>
+                        Comunicación
+                        <div class="skill-bar"><span class="skill-level" style="width:88%"></span></div>
+                    </li>
+                    <li>
+                        Liderazgo
+                        <div class="skill-bar"><span class="skill-level" style="width:82%"></span></div>
+                    </li>
+                </ul>
+            </div>
+            <div class="cv-languages">
+                <h3>Idiomas</h3>
+                <ul>
+                    <li>Español <span class="lang-level">Nativo</span></li>
+                    <li>Inglés <span class="lang-level">Avanzado (C1)</span></li>
+                    <li>Catalán <span class="lang-level">Intermedio</span></li>
+                    <li>Francés <span class="lang-level">Básico</span></li>
+                </ul>
+            </div>
+            <div class="cv-certifications">
+                <h3>Certificaciones</h3>
+                <ul>
+                    <li>Scrum Master <span class="cert-date">2023</span></li>
+                    <li>Google Data Analytics <span class="cert-date">2022</span></li>
+                    <li>React Developer <span class="cert-date">2021</span></li>
+                </ul>
+            </div>
+            <div class="cv-social">
+                <h3>Redes</h3>
+                <ul>
+                    <li>
+                        <a href="https://linkedin.com/in/cesar" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/cesar" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://twitter.com/cesar" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/cesar" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="cv-right">
+            <div class="cv-profile">
+                <h2>César Martínez</h2>
+                <h4>Ingeniero de Sistemas | Desarrollador Web | Scrum Master</h4>
+                <p>Profesional con más de 3 años de experiencia en desarrollo web, gestión de proyectos y liderazgo de equipos multidisciplinares. Especializado en tecnologías frontend y backend, con enfoque en la mejora continua, la innovación y la entrega de soluciones eficientes. Destaco por mi capacidad analítica, comunicación efectiva y compromiso con la excelencia.</p>
+            </div>
+            <div class="cv-section">
+                <h3>Experiencia Laboral</h3>
+                <ul>
+                    <li>
+                        <span class="job-title">Desarrollador Web Senior</span> - <span class="job-company">Tech Solutions</span> <span class="job-date">(2022 - Actualidad)</span><br>
+                        <span class="job-desc">Liderazgo en el desarrollo de aplicaciones web modernas, optimización de interfaces y colaboración en equipos ágiles.</span>
+                        <ul class="job-achievements">
+                            <li>Implementación de arquitectura React y Redux para proyectos clave.</li>
+                            <li>Mejora del rendimiento web en un 30% mediante optimización de código y recursos.</li>
+                            <li>Mentoría a desarrolladores junior y formación interna.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="job-title">Prácticas en IT</span> - <span class="job-company">Innovatech</span> <span class="job-date">(2021 - 2022)</span><br>
+                        <span class="job-desc">Soporte técnico, automatización de procesos internos y desarrollo de scripts para análisis de datos.</span>
+                        <ul class="job-achievements">
+                            <li>Automatización de reportes con Python y Google Sheets.</li>
+                            <li>Despliegue de herramientas colaborativas para el equipo.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="job-title">Freelance Developer</span> <span class="job-date">(2020 - 2021)</span><br>
+                        <span class="job-desc">Desarrollo de sitios web y aplicaciones para clientes de diversos sectores.</span>
+                        <ul class="job-achievements">
+                            <li>Entrega de más de 10 proyectos web personalizados.</li>
+                            <li>Integración de sistemas de pago y CRM.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="cv-section">
+                <h3>Educación</h3>
+                <ul>
+                    <li>
+                        <span class="degree">Grado en Ingeniería de Sistemas</span> - <span class="degree-school">La Salle Barcelona</span> <span class="degree-date">(2018 - 2022)</span>
+                        <span class="degree-extra">Mención en Desarrollo Web</span>
+                    </li>
+                    <li>
+                        <span class="degree">Curso Profesional de React</span> - <span class="degree-school">Udemy</span> <span class="degree-date">(2021)</span>
+                    </li>
+                    <li>
+                        <span class="degree">Diplomado en Gestión de Proyectos</span> - <span class="degree-school">Coursera</span> <span class="degree-date">(2022)</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="cv-section">
+                <h3>Proyectos Destacados</h3>
+                <ul>
+                    <li>
+                        <span class="project-title">Sistema de Gestión de Inventario</span>
+                        <span class="project-tech">[React, Node.js, MongoDB]</span><br>
+                        <span class="project-desc">Aplicación web para control de inventarios, con interfaz intuitiva, reportes automáticos y autenticación segura.</span>
+                    </li>
+                    <li>
+                        <span class="project-title">App de Tareas Colaborativas</span>
+                        <span class="project-tech">[Vue.js, Firebase]</span><br>
+                        <span class="project-desc">Herramienta para gestión de tareas en equipos, con notificaciones, seguimiento de progreso y chat integrado.</span>
+                    </li>
+                    <li>
+                        <span class="project-title">Dashboard de Análisis de Datos</span>
+                        <span class="project-tech">[Python, Dash, Plotly]</span><br>
+                        <span class="project-desc">Plataforma para visualización y análisis de datos empresariales, con filtros avanzados y exportación de informes.</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="cv-section">
+                <h3>Referencias</h3>
+                <ul>
+                    <li>
+                        <span class="job-title">Laura Gómez</span> - <span class="job-company">Tech Solutions</span><br>
+                        <span class="job-desc">Directora de Proyectos | laura.gomez@techsolutions.com</span>
+                    </li>
+                    <li>
+                        <span class="job-title">Javier Ruiz</span> - <span class="job-company">Innovatech</span><br>
+                        <span class="job-desc">CTO | javier.ruiz@innovatech.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body></div></ul>
+</html>
