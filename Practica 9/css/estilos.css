@@ -1,0 +1,27 @@
+body{
+    background: radial-gradient(circle, rgba(137, 204, 4, 1) 83%, rgba(0, 0, 0, 1) 100%);
+   
+
+}
+h1, p {
+    text-align: center;
+    color: #290505;
+    font-family: "Cossette Titre", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.cossette-titre-bold {
+  font-family: "Cossette Titre", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+h2 {
+  font-family: "Archivo Black", sans-serif;
+  text-align: center;
+  font-size: 120px;
+  font-weight: 400;
+  font-style: normal;
+}
+
