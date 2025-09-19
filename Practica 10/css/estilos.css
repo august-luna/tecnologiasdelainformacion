@@ -1,0 +1,110 @@
+:root {
+    --color1: rgb(255, 255, 255);
+    --color2: rgb(174, 75, 223);
+    --color3: rgb(73, 50, 148);
+    --color4: rgb(234, 136, 183);
+    --color5: rgb(117, 47, 49);
+    --color6: rgb(49, 117, 47);
+    --color7: rgb(107, 234, 179);
+    --color8: rgb(49, 47, 117);
+    --color9: rgb(141, 202, 246);
+    --color10: rgb(246, 240, 176);
+    --color11: rgb(185, 175, 34);
+    --color12: rgb(233, 190, 131);
+    --color13: rgb(222, 144, 55);
+
+
+}
+
+* {
+    background-color: var(--color1);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 40px;
+
+}
+.item { 
+    background-color: var(--color5);
+    border-color: #19194f;
+    text-align: center;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 10px;
+
+}
+#item1 {
+    background-color: var(--color1);
+    border-width: 10px;
+    border-style: solid;
+    border-color: var(--color1);
+}
+#item2 {
+    background-color: var(--color1);
+    box-sizing: content-box;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+#item3 {
+    background-color: var(--color1);
+    border-width: 10px;
+    border-style: solid;
+    border-color: var(--color1);
+}
+
+#item4 {
+    background-color: var(--color2);
+    border-width: 10px;
+    border-style: solid;
+    border-color: var(--color3);
+}
+#item5 {
+    background-color: var(--color4);
+    border-width: 10px;
+    border-style: solid;
+    border-color: var(--color5);
+    width: 360px;
+    height: 380px;
+}
+#item6 {
+    background-color: var(--color7);
+    border-width: 10px;
+    border-style: solid;
+    border-color: var(--color6);
+}
+#item7 {
+    background-color: var(--color10);
+    border-width: 10px;
+    border-style: solid;
+    border-color: var(--color11);
+}
+#item8 {
+    background-color: var(--color9);
+    border-width: 10px;
+    border-style: solid;
+    border-color: var(--color8);
+}
+#item9 {
+    background-color: var(--color12);
+    border-width: 10px;
+    border-style: solid;
+    border-color: var(--color13);
+    width: 360px;
+    height: 280px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
