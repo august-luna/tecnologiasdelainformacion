@@ -26,6 +26,7 @@
 
 .container {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     padding: 40px;
@@ -38,6 +39,8 @@
     border-radius: 20px;
     padding: 20px;
     margin: 10px;
+    flex: 1 
+    
 
 }
 #item1 {
@@ -103,8 +106,58 @@
     height: 280px;
 }
 
+
 img {
     width: 100%;
     height: auto;
     border-radius: 10px;
+
+}
+/*Solo utilice copilot para generar el codigo adaptativo a la pagina*/ 
+@media (max-width: 900px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "item1"
+            "item2"
+            "item3"
+            "item4"
+            "item5"
+            "item6"
+            "item7"
+            "item8"
+            "item9";
+    }
+    #item1 { grid-area: item1; }
+    #item2 { grid-area: item2; }
+    #item3 { grid-area: item3; }
+    #item4 { grid-area: item4; }
+    #item5 { grid-area: item5; }
+    #item6 { grid-area: item6; }
+    #item7 { grid-area: item7; }
+    #item8 { grid-area: item8; }
+    #item9 { grid-area: item9; }
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "item1 item2"
+            "item3 item3"
+            "item4 item5"
+            "item6 item7"
+            "item8 item9";
+    }
+    #item1 { grid-area: item1; }
+    #item2 { grid-area: item2; }
+    #item3 { grid-area: item3; }
+    #item4 { grid-area: item4; }
+    #item5 { grid-area: item5; }
+    #item6 { grid-area: item6; }
+    #item7 { grid-area: item7; }
+    #item8 { grid-area: item8; }
+    #item9 { grid-area: item9; }
 }
