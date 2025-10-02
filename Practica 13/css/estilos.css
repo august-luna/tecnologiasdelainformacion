@@ -1,0 +1,22 @@
+body{
+    background-color: rgb(206, 205, 205);
+    color: black;
+    margin: 0px;
+    padding: 0px;
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+}
+#encabezado{
+    background-color: aliceblue;
+    border: 2px solid rgba(174,219,208,0.72);
+    border-radius: 20px;
+    width: 80%;
+    margin: 30px auto;
+    display: block;
+    box-shadow: 4px 4px 58px 25px rgba(174,219,208,0.72) inset;
+    -webkit-box-shadow: 4px 4px 58px 25px rgba(174,219,208,0.72) inset;
+    -moz-box-shadow: 4px 4px 58px 25px rgba(174,219,208,0.72) inset;
+
+}
