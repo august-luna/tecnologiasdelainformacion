@@ -1,0 +1,273 @@
+/* ========================
+   CONFIGURACIÓN GLOBAL Y VARIABLES
+   ======================== */
+:root {
+    --color-beige: #f5f5dc;     /* Fondo principal */
+    --color-blanco: #ffffff;    /* Fondo de tarjetas */
+    --color-dorado: #c5a572;    /* Acentos y títulos */
+    --color-negro: #1c1c1c;     /* Texto principal */
+    --color-gris-texto: #555;   /* Descripciones */
+    --color-gris-claro: #ececec; /* Fondo para hover de nav mobile */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Poppins', sans-serif;
+    --sombra-sutil: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --sombra-hover: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.logo-image {
+    max-width: 30%;
+    height: auto;
+    display: block;
+}
+
+/* ... (Reseteo básico, html, body, img, a, ul, contenedores) ... */
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); background-color: var(--color-beige); color: var(--color-negro); line-height: 1.6; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+img { max-width: 100%; display: block; } /* Asegura que las imágenes no se desborden */
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+.navbar-container, .section-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+/* ========================
+   HEADER / NAVBAR
+   ======================== */
+.navbar { background-color: var(--color-blanco); padding: 1.2rem 0; border-bottom: 1px solid #eee; box-shadow: var(--sombra-sutil); position: sticky; top: 0; z-index: 1000; }
+.navbar-container { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 700; color: var(--color-dorado); display: flex; align-items: center; gap: 0.5rem; }
+.logo-icon { font-size: 1.5rem; line-height: 1; }
+.nav-links ul { display: flex; gap: 2rem; }
+.nav-links a { font-weight: 500; color: var(--color-negro); padding-bottom: 0.25rem; position: relative; transition: color 0.3s ease; }
+.nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0%; height: 2px; background-color: var(--color-dorado); transition: width 0.3s ease; }
+.nav-links a:hover { color: var(--color-dorado); }
+.nav-links a:hover::after { width: 100%; }
+
+.nav-toggle-button {
+    display: none; 
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0; 
+    width: 30px; /* Asegura un tamaño consistente para el ícono */
+    height: 25px;
+    position: relative;
+    z-index: 1001; /* Asegura que esté por encima del menú desplegable */
+}
+.nav-toggle-button span,
+.nav-toggle-button span::before,
+.nav-toggle-button span::after {
+    content: '';
+    display: block;
+    background-color: var(--color-negro);
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    transition: all 0.3s ease;
+}
+.nav-toggle-button span { top: 11px; }
+.nav-toggle-button span::before { top: -8px; }
+.nav-toggle-button span::after { top: 8px; }
+.nav-toggle-button.is-active span { background-color: transparent; }
+.nav-toggle-button.is-active span::before { transform: rotate(45deg); top: 0; }
+.nav-toggle-button.is-active span::after { transform: rotate(-45deg); top: 0; }
+
+/* ========================
+   SECCIÓN DE CATEGORÍAS PRINCIPALES (CON IMAGEN DE FONDO)
+   ======================== */
+.category-showcase {
+    background-color: var(--color-beige);
+    padding: 6rem 0;
+    text-align: center;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    /* Estilos para la imagen de fondo */
+    background-image: url('img/Fotos amaretto/Cool Flow ☕️❄️.jpg'); /* URL de tu imagen de fondo */
+    background-size: cover; /* Cubre todo el área */
+    background-position: center center; /* Centra la imagen */
+    background-attachment: fixed; /* Hace que la imagen se fije al desplazarse */
+    color: var(--color-blanco); /* Cambia el color del texto para que se vea sobre la imagen */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para el texto */
+    position: relative; /* Para el overlay */
+}
+
+/* Capa de superposición para mejorar la legibilidad del texto */
+.category-showcase::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Capa semi-transparente oscura */
+    z-index: 1;
+}
+
+.category-showcase .section-container {
+    position: relative; /* Asegura que el contenido esté por encima del overlay */
+    z-index: 2;
+}
+
+.category-showcase h1 {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    color: var(--color-dorado); /* Color dorado para el título */
+    margin-bottom: 1rem;
+}
+
+.category-showcase .tagline {
+    font-size: 1.5rem;
+    color: var(--color-blanco); /* Color blanco para el subtítulo */
+    margin-bottom: 3rem;
+}
+
+.category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; width: 100%; max-width: 900px; }
+.category-card { 
+    background-color: rgba(255, 248, 236, 0.865); /* Fondo ligeramente transparente */
+    padding: 2rem 1rem;
+    border-radius: 10px;
+    box-shadow: var(--sombra-sutil);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: var(--color-negro);
+    text-align: center;
+}
+.category-card:hover { transform: translateY(-8px); box-shadow: var(--sombra-hover); }
+.category-card img { width: 80px; height: 80px; object-fit: contain; margin-bottom: 1rem; border-radius: 50%; background-color: var(--color-blanco); padding: 0.5rem; }
+.category-card h3 { font-family: var(--font-heading); font-size: 1.8rem; margin: 0; color: var(--color-dorado); text-shadow: none; }
+
+
+/* ========================
+   SECCIÓN DE MENÚ GENERAL
+   ======================== */
+.menu-section { padding: 4rem 0; }
+.menu-section h2 { font-family: var(--font-heading); font-size: 3rem; text-align: center; color: var(--color-dorado); margin-bottom: 3rem; }
+
+/* ========================
+   BANNER DE IMAGEN POR SUBCATEGORÍA
+   ======================== */
+.category-image-banner {
+    margin-top: 1.5rem; /* Espacio debajo del h3 */
+    margin-bottom: 2rem; /* Espacio antes de la lista de ítems */
+    border-radius: 10px;
+    overflow: hidden; /* Asegura que la imagen no se desborde */
+    box-shadow: var(--sombra-sutil);
+}
+
+.category-image-banner img {
+    width: 100%;
+    height: 350px; /* Altura fija en escritorio */
+    object-fit: cover; /* Recorta la imagen para cubrir el espacio */
+    object-position: 50% 58%; /* Centra la imagen */
+    transition: transform 0.3s ease;
+}
+
+.category-image-banner img:hover {
+    transform: scale(1.02); /* Pequeño zoom al pasar el ratón */
+}
+
+
+/* ========================
+   ESTILOS DE LAS LISTAS DE PRODUCTOS (SIN IMAGEN POR ITEM)
+   ======================== */
+.menu-section-cafes, .menu-section-comida, .menu-section-postres { background-color: var(--color-blanco); padding-top: 2rem; }
+.menu-category-block { margin-bottom: 3rem; padding: 1rem; }
+.category-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem; /* Menos margen aquí para dejar espacio para el banner */ border-bottom: none; /* Quitamos el borde inferior del header */ padding-bottom: 0; }
+.category-header img { width: 40px; height: 40px; object-fit: contain; }
+.category-header h3 { font-family: var(--font-heading); font-size: 2.2rem; color: var(--color-negro); margin: 0; }
+
+.menu-list {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 1rem; /* Pequeño padding si lo necesitas */
+}
+
+.menu-item-simple {
+    display: flex;
+    align-items: flex-start; /* Alinea los ítems al principio */
+    gap: 1rem;
+    padding: 0.75rem 0; /* Espaciado ajustado */
+    border-bottom: 1px dashed var(--color-gris-claro);
+}
+.menu-list article:last-child { border-bottom: none; }
+
+/* Eliminamos los estilos de imagen de los items de la lista */
+/* .menu-item-simple img { display: none; } */ /* Deshabilita esta regla si quieres volver a mostrar imágenes por item */
+
+.menu-item-simple .item-details { flex-grow: 1; }
+.menu-item-simple h4 { font-family: var(--font-body); font-size: 1.1rem; font-weight: 700; color: var(--color-negro); margin-bottom: 0.25rem; }
+.menu-item-simple .description { font-size: 0.85rem; color: var(--color-gris-texto); }
+.menu-item-simple .price { font-size: 1.1rem; font-weight: 700; color: var(--color-dorado); flex-shrink: 0; margin-left: auto; text-align: right; /* Alinea el precio a la derecha si es muy largo */ }
+
+
+/* ========================
+   RESPONSIVIDAD (Media Queries)
+   ======================== */
+
+@media (max-width: 768px) {
+    .navbar-container, .section-container { padding: 0 1rem; }
+    
+    /* Navbar móvil */
+    .nav-links {
+        position: absolute; top: 100%; left: 0; width: 100%; background-color: var(--color-blanco);
+        display: flex; flex-direction: column; align-items: center; padding: 1rem 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        transform: translateY(-150%); transition: transform 0.3s ease-out;
+    }
+    .nav-links.is-open { transform: translateY(0); }
+    .nav-links ul { flex-direction: column; width: 100%; text-align: center; gap: 0.5rem; }
+    .nav-links li { width: 100%; }
+    .nav-links a { display: block; padding: 1rem; width: 100%; }
+    .nav-links a:hover { background-color: var(--color-gris-claro); }
+    .nav-links a::after { display: none; }
+
+    /* Hamburguesa botón */
+    .nav-toggle-button { display: block; }
+
+    /* Sección de bienvenida */
+    .category-showcase { 
+        padding: 4rem 0; 
+        min-height: auto; 
+        background-attachment: scroll; /* La imagen de fondo se desplaza en móvil */
+    }
+    .category-showcase h1 { font-size: 2.5rem; }
+    .category-showcase .tagline { font-size: 1.2rem; margin-bottom: 2rem; }
+    .category-grid { grid-template-columns: 1fr; }
+    .category-card img { width: 60px; height: 60px; }
+    .category-card h3 { font-size: 1.5rem; }
+
+    /* Marcos panorámicos en móvil */
+    .category-image-banner {
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    .category-image-banner img {
+        height: 180px; /* Altura más pequeña para móviles */
+        /* object-fit: contain; */ /* Podrías usar 'contain' si prefieres ver la imagen completa sin recorte */
+    }
+
+    /* Listas de menú */
+    .menu-section h2 { font-size: 2.5rem; margin-bottom: 2rem; }
+    .category-header h3 { font-size: 1.8rem; }
+    /* .menu-list ya es de 1 columna por defecto */
+    .menu-item-simple h4 { font-size: 1rem; }
+    .menu-item-simple .description { font-size: 0.8rem; }
+    .menu-item-simple .price { font-size: 1rem; }
+}
+
+@media (max-width: 480px) {
+    .logo { font-size: 1.5rem; }
+    .logo-icon { font-size: 1.2rem; }
+    .category-showcase h1 { font-size: 2rem; }
+    .category-showcase .tagline { font-size: 1rem; }
+    .category-image-banner img {
+        height: 150px; /* Aún más pequeña en pantallas muy chicas */
+    }
+}
